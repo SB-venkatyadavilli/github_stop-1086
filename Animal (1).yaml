@@ -1,0 +1,194 @@
+title: Animal
+x-stoplight:
+  id: cfwo5xc5bmtdt
+description: Test Animal
+allOf:
+  - $ref: '#/%24defs/Ship'
+    x-stoplight:
+      id: fu4dsnfa9ktu0
+  - $ref: '#/%24defs/parent'
+    x-stoplight:
+      id: 6nf7dfuen9a8o
+  - $ref: '#/%24defs/Fish'
+    x-stoplight:
+      id: gry6844c3339m
+  - $ref: '#/%24defs/TestAnimal'
+    x-stoplight:
+      id: 5stmciixlm2zr
+  - oneOf:
+      - $ref: '#/%24defs/parent'
+        x-stoplight:
+          id: o6k21ga0l32qy
+    x-stoplight:
+      id: 5qxi4q3xsx70b
+$defs:
+  Ship:
+    type: object
+    title: Ship
+    description: The Ship (under the Bridge)North- west.
+    anyOf:
+      - type: object
+        properties:
+          name:
+            type: string
+            x-stoplight:
+              id: muvihs0q07zi3
+        x-stoplight:
+          id: 95kw180z52b7x
+    x-stoplight:
+      id: lagabwfhgjz9r
+  parent:
+    title: parent
+    description: this is from parent(Family).
+    allOf:
+      - $ref: '#/%24defs/child'
+        x-stoplight:
+          id: ez0tih19frfwi
+      - $ref: '#'
+        x-stoplight:
+          id: eu70s3ag9gsg8
+    x-stoplight:
+      id: 5l267f08v58j3
+  child:
+    type: object
+    title: child
+    description: Child () Start .....Test Finish.
+    properties:
+      ch_name:
+        type: string
+        x-stoplight:
+          id: dg2x9z95f8cu9
+    x-stoplight:
+      id: 5tcukcabk7os8
+  Fish:
+    type: object
+    title: Fish
+    description: The Fish family
+    properties:
+      general:
+        $ref: '#/%24defs/Ship'
+        x-stoplight:
+          id: sxnbekydd5o2l
+    x-stoplight:
+      id: vaph31lxm2g47
+  TestAnimal:
+    type: object
+    title: TestAnimal
+    description: |-
+      description can be 1 liner or 2 liner So 
+      Test() ....... The description can be 1 liner or 2 liner So 
+      Test() ....... The description can be 1 liner or 2 liner So 
+      Test() ....... The description can be 1 liner or 2 liner So 
+      Test() ....... The description can be 1 liner or 2 liner So 0-0-9-90 iQW@#@$%##%$%%^%^^E^E^
+      Test() ....... The description can be 1 liner or 2 liner So Test() ....... The description can be 1 liner or 2 liner So 
+      Test() ....... The description can be 1 liner or 2 liner So 
+      Test() ....... The description can be 1 liner or 2 liner So 
+      Test() ....... The description can be 1 liner or 2 liner So 
+      Test() ....... The description can be 1 liner or 2 liner So 0-0-9-90 iQW@#@$%##%$%%^%^^E^E^
+      Test() ....... The description can be 1 liner or 2 liner So Test() ....... The description can be 1 liner or 2 liner So 
+      Test() ....... The description can be 1 liner or 2 liner So 
+      Test() ....... The description can be 1 liner or 2 liner So 
+      Test() ....... The description can be 1 liner or 2 liner So 
+      Test() ....... The description can be 1 liner or 2 liner So 0-0-9-90 iQW@#@$%##%$%%^%^^E^E^
+      Test() ....... The description can be 1 liner or 2 liner So Test() ....... The description can be 1 liner or 2 liner So 
+      Test() ....... The description can be 1 liner or 2 liner So 
+      Test() ....... The description can be 1 liner or 2 liner So 
+      Test() ....... The description can be 1 liner or 2 liner So 
+      Test() ....... The description can be 1 liner or 2 liner So 0-0-9-90 iQW@#@$%##%$%%^%^^E^E^
+      Test() ....... The description can be 1 liner or 2 liner So Test() ....... The description can be 1 liner or 2 liner So 
+      Test() ....... The description can be 1 liner or 2 liner So 
+      Test() ....... The description can be 1 liner or 2 liner So 
+      Test() ....... The description can be 1 liner or 2 liner So 
+      Test() ....... The description can be 1 liner or 2 liner So 0-0-9-90 iQW@#@$%##%$%%^%^^E^E^
+      Test() ....... The description can be 1 liner or 2 liner So Test() ....... The description can be 1 liner or 2 liner So 
+      Test() ....... The description can be 1 liner or 2 liner So 
+      Test() ....... The description can be 1 liner or 2 liner So 
+      Test() ....... The description can be 1 liner or 2 liner So 
+      Test() ....... The description can be 1 liner or 2 liner So 0-0-9-90 iQW@#@$%##%$%%^%^^E^E^
+      Test() ....... The description can be 1 liner or 2 liner So Test() ....... The description can be 1 liner or 2 liner So 
+      Test() ....... The description can be 1 liner or 2 liner So 
+      Test() ....... The description can be 1 liner or 2 liner So 
+      Test() ....... The description can be 1 liner or 2 liner So 
+      Test() ....... The description can be 1 liner or 2 liner So 0-0-9-90 iQW@#@$%##%$%%^%^^E^E^
+      Test() ....... The description can be 1 liner or 2 liner So Test() ....... The description can be 1 liner or 2 liner So 
+      Test() ....... The description can be 1 liner or 2 liner So 
+      Test() ....... The description can be 1 liner or 2 liner So 
+      Test() ....... The description can be 1 liner or 2 liner So 
+      Test() ....... The description can be 1 liner or 2 liner So 0-0-9-90 iQW@#@$%##%$%%^%^^E^E^
+      Test() ....... The description can be 1 liner or 2 liner So 
+    oneOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            x-stoplight:
+              id: hep7lpzf06gr5
+          '':
+            type: object
+            properties:
+              '':
+                type: object
+                anyOf:
+                  - type: object
+                    properties:
+                      Test:
+                        type: object
+                        additionalProperties:
+                          x-stoplight:
+                            id: a2fwx7vdz0ej2
+                        x-stoplight:
+                          id: mimqcukf6uq64
+                      '':
+                        type: object
+                        allOf:
+                          - x-stoplight:
+                              id: hzckyli87ve4w
+                          - type: object
+                            properties:
+                              '':
+                                oneOf:
+                                  - $ref: '#/%24defs/Fish'
+                                    x-stoplight:
+                                      id: kdesxtam77z0z
+                                  - $ref: '#/%24defs/Ship'
+                                    x-stoplight:
+                                      id: 3othr51vsg4k1
+                                  - anyOf:
+                                      - allOf:
+                                          - $ref: '#/%24defs/parent'
+                                            x-stoplight:
+                                              id: puuxbru1g8a27
+                                          - $ref: '#/%24defs/child'
+                                            x-stoplight:
+                                              id: dl4uuxwysmphn
+                                          - $ref: '#/%24defs/TestAnimal'
+                                            x-stoplight:
+                                              id: z2bmvsa3z4bhg
+                                        x-stoplight:
+                                          id: xyqkpybk0p4wg
+                                      - type: object
+                                        properties:
+                                          '':
+                                            type: string
+                                            x-stoplight:
+                                              id: oz17x0qqerau0
+                                        x-stoplight:
+                                          id: quzv9eo8lydp2
+                                    x-stoplight:
+                                      id: 2ywuch6qkqi59
+                                x-stoplight:
+                                  id: yd7s00yeav1jh
+                            x-stoplight:
+                              id: 7li7z4sa6c5yj
+                        x-stoplight:
+                          id: bruiqmllt0qex
+                    x-stoplight:
+                      id: wlbskfhckkrkh
+                x-stoplight:
+                  id: he2ixysyve9ik
+            x-stoplight:
+              id: 070lj0a43yx70
+        x-stoplight:
+          id: 4eb2d9yc79w3d
+    x-stoplight:
+      id: vyed0upjc8rf4

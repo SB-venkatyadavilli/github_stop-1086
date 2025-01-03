@@ -1,0 +1,33 @@
+{
+  "collapseTableOfContents": false,
+  "items": [
+    {
+      "type": "item",
+      "title": "Article",
+      "uri": "/docs/Article.md"
+    },
+    {
+      "type": "divider",
+      "title": "APIS"
+    },
+    {
+      "type": "item",
+      "title": "api",
+      "uri": "/reference/api.yaml"
+    },
+    {
+      "type": "divider",
+      "title": "Schemas"
+    },
+    {
+      "type": "item",
+      "title": "model",
+      "uri": "/models/model.yaml"
+    },
+    {
+      "type": "item",
+      "title": "Model12",
+      "uri": "/models/Model12.yaml"
+    }
+  ]
+}
