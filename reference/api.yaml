@@ -151,6 +151,14 @@ paths:
       description: Create a new user.
       x-stoplight:
         id: ly7iajkdf37be
+  /uawe:
+    get:
+      summary: sds
+      tags: []
+      responses: {}
+      operationId: get-uawe
+      x-stoplight:
+        id: ge9mmyf4extoe
 components:
   schemas:
     User:
