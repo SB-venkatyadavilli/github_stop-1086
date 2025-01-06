@@ -1,0 +1,280 @@
+{
+  "swagger": "2.0",
+  "x-stoplight": {
+    "id": "eijn4iofw6e23"
+  },
+  "info": {
+    "title": "API",
+    "version": "1.0"
+  },
+  "host": "localhost:3000",
+  "schemes": [
+    "http"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "paths": {
+    "/users/{userId}": {
+      "parameters": [
+        {
+          "type": "integer",
+          "name": "userId",
+          "in": "path",
+          "required": true,
+          "description": "Id of an existing user."
+        }
+      ],
+      "get": {
+        "summary": "Get User Info by User ID",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "User Found",
+            "schema": {
+              "$ref": "#/definitions/User"
+            },
+            "examples": {
+              "Get User Alice Smith": {
+                "id": 142,
+                "firstName": "Alice",
+                "lastName": "Smith",
+                "email": "alice.smith@gmail.com",
+                "dateOfBirth": "1997-10-31",
+                "emailVerified": true,
+                "signUpDate": "2019-08-24"
+              }
+            }
+          },
+          "404": {
+            "description": "User Not Found",
+            "schema": {
+              "type": "null"
+            },
+            "examples": {}
+          }
+        },
+        "operationId": "get-users-userId",
+        "description": "Retrieve the information of the user with the matching user ID.",
+        "x-stoplight": {
+          "id": "jh9rv26pw4bg2"
+        }
+      },
+      "patch": {
+        "summary": "Update User Information",
+        "operationId": "patch-users-userId",
+        "responses": {
+          "200": {
+            "description": "User Updated",
+            "schema": {
+              "$ref": "#/definitions/User"
+            },
+            "examples": {
+              "Update User Rebecca Baker": {
+                "id": 13,
+                "firstName": "Rebecca",
+                "lastName": "Baker",
+                "email": "rebecca@gmail.com",
+                "dateOfBirth": "1985-10-02",
+                "emailVerified": false,
+                "createDate": "2019-08-24"
+              }
+            }
+          },
+          "404": {
+            "description": "User Not Found",
+            "schema": {
+              "type": "null"
+            }
+          },
+          "409": {
+            "description": "Email Already Taken",
+            "schema": {
+              "type": "null"
+            }
+          }
+        },
+        "description": "Update the information of an existing user.",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string"
+                },
+                "lastName": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string",
+                  "description": "If a new email is given, the user's email verified property will be set to false."
+                },
+                "dateOfBirth": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Patch user properties to update.",
+            "x-examples": {
+              "Update First Name": {
+                "firstName": "Rebecca"
+              },
+              "Update Email": {
+                "email": "rebecca@gmail.com"
+              },
+              "Update Last Name & Date of Birth": {
+                "lastName": "Baker",
+                "dateOfBirth": "1985-10-02"
+              }
+            }
+          }
+        ],
+        "x-stoplight": {
+          "id": "vu8u9kf97le6u"
+        }
+      }
+    },
+    "/user": {
+      "post": {
+        "summary": "Create New User",
+        "operationId": "post-user",
+        "responses": {
+          "200": {
+            "description": "User Created",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "400": {
+            "description": "Missing Required Information",
+            "schema": {
+              "type": "null"
+            }
+          },
+          "409": {
+            "description": "Email Already Taken",
+            "schema": {
+              "type": "null"
+            }
+          }
+        },
+        "description": "Create a new user.",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string"
+                },
+                "lastName": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "dateOfBirth": {
+                  "type": "string",
+                  "format": "date"
+                }
+              },
+              "required": [
+                "firstName",
+                "lastName",
+                "email",
+                "dateOfBirth"
+              ]
+            },
+            "description": "Post the necessary fields for the API to create a new user.",
+            "x-examples": {
+              "Create User Bob Fellow": {
+                "firstName": "Bob",
+                "lastName": "Fellow",
+                "email": "bob.fellow@gmail.com",
+                "dateOfBirth": "1996-08-24"
+              }
+            }
+          }
+        ],
+        "x-stoplight": {
+          "id": "l1hah1vw49daw"
+        }
+      }
+    }
+  },
+  "definitions": {
+    "User": {
+      "title": "User",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Unique identifier for the given user.",
+          "x-stoplight": {
+            "id": "1f338mmdzskq2"
+          }
+        },
+        "firstName": {
+          "type": "string",
+          "x-stoplight": {
+            "id": "v0hufzu8xvxnt"
+          }
+        },
+        "lastName": {
+          "type": "string",
+          "x-stoplight": {
+            "id": "rokjvqtdt62ql"
+          }
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "x-stoplight": {
+            "id": "jrlvg67uc91vl"
+          }
+        },
+        "dateOfBirth": {
+          "type": "string",
+          "format": "date",
+          "example": "1997-10-31",
+          "x-stoplight": {
+            "id": "6a5d5myu47udl"
+          }
+        },
+        "emailVerified": {
+          "type": "boolean",
+          "description": "Set to true if the user's email has been verified.",
+          "x-stoplight": {
+            "id": "zr39s7a2avvn7"
+          }
+        },
+        "createDate": {
+          "type": "string",
+          "format": "date",
+          "description": "The date that the user was created.",
+          "x-stoplight": {
+            "id": "wqnloys6ddr1x"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "firstName",
+        "lastName",
+        "email",
+        "emailVerified"
+      ],
+      "x-stoplight": {
+        "id": "kfpzkq43i5k1y"
+      }
+    }
+  }
+}
